@@ -1,5 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -19,19 +20,23 @@ const Navbar = () => {
             </li>
           </div>
           <li>
-            <a
+            <NavLink
               className=" py-1 px-8 border-cyan-500 text-cyan-500   hover:text-cyan-500/60 hover:border-cyan-500/60 border rounded-full  flex items-center gap-1"
-              href=""
+              to="/"
             >
               Profile
-            </a>
+            </NavLink>
           </li>
         </ul>
         <ul className="flex  justify-between h-24 ">
           <li className="border  w-full flex justify-center items-center ">
-            <a
-              className="w-full h-full hover:bg-cyan-950/40 bg-cyan-950/40 flex flex-col-reverse justify-center items-center text-blue-500 font-bold"
-              href=""
+            <NavLink
+              to="watching"
+              className={({ isActive }) =>
+                `${
+                  isActive ? "bg-cyan-950/40" : ""
+                } w-full h-full hover:bg-cyan-950/40  flex flex-col-reverse justify-center items-center text-blue-500 font-bold`
+              }
             >
               Watching
               <svg
@@ -50,12 +55,16 @@ const Navbar = () => {
                 <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
                 <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
               </svg>
-            </a>
+            </NavLink>
           </li>
           <li className="border  w-full flex justify-center items-center">
-            <a
-              className="w-full h-full hover:bg-cyan-950/40 flex flex-col-reverse justify-center items-center text-green-500 font-bold"
-              href=""
+            <NavLink
+              className={({ isActive }) =>
+                `${
+                  isActive ? "bg-cyan-950/40" : ""
+                } w-full h-full hover:bg-cyan-950/40 flex flex-col-reverse justify-center items-center text-green-500 font-bold`
+              }
+              to="watched"
             >
               Watched
               <svg
@@ -74,13 +83,17 @@ const Navbar = () => {
                 <path d="M9 12l2 2l4 -4" />
                 <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
               </svg>
-            </a>
+            </NavLink>
           </li>
 
           <li className="border w-full flex justify-center items-center">
-            <a
-              className="w-full h-full hover:bg-cyan-950/40 flex flex-col-reverse justify-center items-center text-yellow-500 font-bold"
-              href=""
+            <NavLink
+              className={({ isActive }) =>
+                `${
+                  isActive ? "bg-cyan-950/40" : ""
+                } w-full h-full hover:bg-cyan-950/40 flex flex-col-reverse justify-center items-center text-yellow-500 font-bold `
+              }
+              to="towatch"
             >
               To Watch
               <svg
@@ -104,7 +117,7 @@ const Navbar = () => {
                 <path d="M12 14v4" />
                 <path d="M16 14v4" />
               </svg>
-            </a>
+            </NavLink>
           </li>
         </ul>
       </nav>
