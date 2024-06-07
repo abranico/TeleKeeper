@@ -1,5 +1,4 @@
-import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
+import { SearchMovie } from "@/components";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -10,23 +9,28 @@ const Navbar = () => {
           <div className="flex  items-center gap-8">
             <li>
               <div className="relative ml-auto flex-1 md:grow-0">
-                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input
-                  type="search"
-                  placeholder="Search..."
-                  className="w-full rounded-lg  pl-8 md:w-[200px] lg:w-[336px] "
-                />
+                <SearchMovie />
               </div>
             </li>
           </div>
-          <li>
-            <NavLink
-              className=" py-1 px-8 border-cyan-500 text-cyan-500   hover:text-cyan-500/60 hover:border-cyan-500/60 border rounded-full  flex items-center gap-1"
-              to="/"
-            >
-              Profile
-            </NavLink>
-          </li>
+          <div className="flex gap-1">
+            <li>
+              <NavLink
+                className=" py-1 px-8  text-gray-100   hover:text-cyan-500/60 hover:border-cyan-500/60   flex items-center gap-1"
+                to="/"
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className=" py-1 px-8 border-cyan-500 text-cyan-500   hover:text-cyan-500/60 hover:border-cyan-500/60 border rounded-full  flex items-center gap-1"
+                to="/"
+              >
+                Profile
+              </NavLink>
+            </li>
+          </div>
         </ul>
         <ul className="flex  justify-between h-24 ">
           <li className="border  w-full flex justify-center items-center ">
